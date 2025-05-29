@@ -17,7 +17,7 @@ sources/0 = SubResource("TileSetAtlasSource_lquwl")
 [node name="main" type="Node2D"]
 
 [node name="chara" parent="." instance=ExtResource("2_h2yge")]
-position = Vector2(-22, -66)
+position = Vector2(-410, 55)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-22, -66)
