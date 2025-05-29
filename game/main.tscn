@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=4 uid="uid://ckp8vvnm8seho"]
+
+[ext_resource type="PackedScene" uid="uid://dgo2fgleqm6fr" path="res://chara.tscn" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://dja767e6m0g3g" path="res://icon.svg" id="3_1bvp3"]
+[ext_resource type="Script" uid="uid://da16uw8o4qqtb" path="res://camera_2d.gd" id="3_h2yge"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lquwl"]
+texture = ExtResource("3_1bvp3")
+0:0/size_in_atlas = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSet" id="TileSet_7mycd"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_lquwl")
+
+[node name="main" type="Node2D"]
+
+[node name="chara" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(-22, -66)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(-22, -66)
+tile_map_data = PackedByteArray("AADd//H/AAAAAAAAAADl//H/AAAAAAAAAADl//n/AAAAAAAAAADd//n/AAAAAAAAAAD//zIAAAAAAAAAAAAGAEUAAAAAAAAAAAAHADIAAAAAAAAAAAAOAEUAAAAAAAAAAAAPADIAAAAAAAAAAAAWAEUAAAAAAAAAAAAXADIAAAAAAAAAAAAeAEUAAAAAAAAAAAAfADIAAAAAAAAAAAAmAEUAAAAAAAAAAAAnADIAAAAAAAAAAAAuAEUAAAAAAAAAAADl/0EAAAAAAAAAAADt/0EAAAAAAAAAAAAJAAQAAAAAAAAAAAARAAQAAAAAAAAAAAD9//H/AAAAAAAAAAAFAPH/AAAAAAAAAAANAPH/AAAAAAAAAAAVAPH/AAAAAAAAAAAdAPH/AAAAAAAAAAAlAPH/AAAAAAAAAADd/xYAAAAAAAAAAADd/x4AAAAAAAAAAADl/xYAAAAAAAAAAADl/x4AAAAAAAAAAADt/xYAAAAAAAAAAADt/x4AAAAAAAAAAAD1/xYAAAAAAAAAAAD1/x4AAAAAAAAAAAD9/xYAAAAAAAAAAAD9/x4AAAAAAAAAAAAFABYAAAAAAAAAAAAFAB4AAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_7mycd")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+script = ExtResource("3_h2yge")

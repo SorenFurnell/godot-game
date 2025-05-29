@@ -1,0 +1,44 @@
+[gd_scene load_steps=10 format=3 uid="uid://dgo2fgleqm6fr"]
+
+[ext_resource type="Texture2D" uid="uid://dja767e6m0g3g" path="res://icon.svg" id="1_852gr"]
+[ext_resource type="Script" uid="uid://dbh1awhe6m8qr" path="res://character_body_2d.gd" id="1_nlhix"]
+[ext_resource type="Script" uid="uid://ckoq8tvfhey72" path="res://can_jump.gd" id="3_odciu"]
+[ext_resource type="Script" uid="uid://dayaw52tfdy5j" path="res://can_flip.gd" id="4_kyqdq"]
+
+[sub_resource type="Gradient" id="Gradient_nlhix"]
+colors = PackedColorArray(0, 0, 1, 1, 0, 0, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_odciu"]
+gradient = SubResource("Gradient_nlhix")
+
+[sub_resource type="Gradient" id="Gradient_kyqdq"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ltiqb"]
+gradient = SubResource("Gradient_kyqdq")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlhix"]
+size = Vector2(128, 128)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_nlhix")
+
+[node name="can jump" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(-35, -103.655)
+texture = SubResource("GradientTexture2D_odciu")
+script = ExtResource("3_odciu")
+
+[node name="can flip" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(35, -103.655)
+texture = SubResource("GradientTexture2D_ltiqb")
+script = ExtResource("4_kyqdq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_852gr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nlhix")
+
+[node name="chara" type="Node2D" parent="."]
