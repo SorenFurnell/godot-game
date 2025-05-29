@@ -21,6 +21,7 @@ gradient = SubResource("Gradient_kyqdq")
 size = Vector2(128, 128)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_nlhix")
 
 [node name="can jump" type="Sprite2D" parent="."]

@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-var maxSpeed = 350
-var run_speed = 350
-var jump_speed = -1000
-var gravity = 2500
-var friction = 100
+var maxSpeed = 175
+var run_speed = 175
+var jump_speed = -500
+var gravity = 1250
+var friction = 50
 var fliped = false
 @export var canJump = false
 @export var canFlip = true
