@@ -6,8 +6,17 @@ var jump_speed = -500
 var gravity = 1250
 var friction = 50
 var fliped = false
+var facingLeft = true
 @export var canJump = false
 @export var canFlip = true
+
+func stop_anims():
+	if facingLeft:
+		get_node("Sprite2D").stop()
+		get_node("Sprite2D").play("facingLeft")
+	else:
+		get_node("Sprite2D").stop()
+		get_node("Sprite2D").play("facingRight")
 
 func get_input():
 	if velocity.x > maxSpeed:
@@ -27,6 +36,8 @@ func get_input():
 	elif is_on_ceiling() and fliped:
 		canJump = true
 		canFlip = true
+	else:
+		stop_anims()
 	
 	var right = Input.is_action_pressed('ui_right')
 	var left = Input.is_action_pressed('ui_left')
@@ -47,10 +58,26 @@ func get_input():
 		canJump = false
 	if right:
 		velocity.x += run_speed
+		facingLeft = false
+		get_node("Sprite2D").play("runRight")
 	if left:
 		velocity.x -= run_speed
+		facingLeft = true
+		get_node("Sprite2D").play("runLeft")
 		
+	if velocity.x == 0:
+		stop_anims()
+		
+	if !facingLeft:
+		get_node("Sprite2D").position.x = -25
+	else:
+		get_node("Sprite2D").position.x = 0
+
 func _physics_process(delta):
 	velocity.y += gravity * delta
 	get_input()
+	if fliped:
+		scale.y = -0.5
+	else:
+		scale.y = 0.5
 	move_and_slide()

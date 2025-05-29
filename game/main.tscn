@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://ckp8vvnm8seho"]
+[gd_scene load_steps=7 format=4 uid="uid://ckp8vvnm8seho"]
 
 [ext_resource type="PackedScene" uid="uid://dgo2fgleqm6fr" path="res://chara.tscn" id="2_h2yge"]
 [ext_resource type="Texture2D" uid="uid://dja767e6m0g3g" path="res://icon.svg" id="3_1bvp3"]
@@ -14,6 +14,9 @@ texture = ExtResource("3_1bvp3")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lquwl")
 
+[sub_resource type="Environment" id="Environment_h2yge"]
+background_color = Color(1, 0, 0, 1)
+
 [node name="main" type="Node2D"]
 
 [node name="chara" parent="." instance=ExtResource("2_h2yge")]
@@ -27,3 +30,6 @@ tile_set = SubResource("TileSet_7mycd")
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 script = ExtResource("3_h2yge")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_h2yge")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dgo2fgleqm6fr"]
+[gd_scene load_steps=22 format=3 uid="uid://dgo2fgleqm6fr"]
 
-[ext_resource type="Texture2D" uid="uid://dja767e6m0g3g" path="res://icon.svg" id="1_852gr"]
 [ext_resource type="Script" uid="uid://dbh1awhe6m8qr" path="res://character_body_2d.gd" id="1_nlhix"]
 [ext_resource type="Script" uid="uid://ckoq8tvfhey72" path="res://can_jump.gd" id="3_odciu"]
 [ext_resource type="Script" uid="uid://dayaw52tfdy5j" path="res://can_flip.gd" id="4_kyqdq"]
+[ext_resource type="Texture2D" uid="uid://tpit4bvxkviq" path="res://runLeft.png" id="4_ltiqb"]
+[ext_resource type="Texture2D" uid="uid://bway3fyq3mnol" path="res://runRight.png" id="5_ltiqb"]
 
 [sub_resource type="Gradient" id="Gradient_nlhix"]
 colors = PackedColorArray(0, 0, 1, 1, 0, 0, 1, 1)
@@ -17,8 +18,101 @@ colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ltiqb"]
 gradient = SubResource("Gradient_kyqdq")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xtib"]
+atlas = ExtResource("4_ltiqb")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g17s7"]
+atlas = ExtResource("5_ltiqb")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imq1a"]
+atlas = ExtResource("4_ltiqb")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfjf1"]
+atlas = ExtResource("4_ltiqb")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63dlk"]
+atlas = ExtResource("4_ltiqb")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5a3m5"]
+atlas = ExtResource("4_ltiqb")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovi7p"]
+atlas = ExtResource("5_ltiqb")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvsrb"]
+atlas = ExtResource("5_ltiqb")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytmva"]
+atlas = ExtResource("5_ltiqb")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1c4vg"]
+atlas = ExtResource("5_ltiqb")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g17s7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xtib")
+}],
+"loop": true,
+"name": &"facingLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g17s7")
+}],
+"loop": true,
+"name": &"facingRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imq1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfjf1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63dlk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5a3m5")
+}],
+"loop": true,
+"name": &"runLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovi7p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvsrb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytmva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1c4vg")
+}],
+"loop": true,
+"name": &"runRight",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlhix"]
-size = Vector2(128, 128)
+size = Vector2(56, 80)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
@@ -36,10 +130,13 @@ position = Vector2(35, -103.655)
 texture = SubResource("GradientTexture2D_ltiqb")
 script = ExtResource("4_kyqdq")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_852gr")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_g17s7")
+animation = &"facingLeft"
+speed_scale = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-12, 24)
 shape = SubResource("RectangleShape2D_nlhix")
-
-[node name="chara" type="Node2D" parent="."]
