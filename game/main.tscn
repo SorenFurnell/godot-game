@@ -69,6 +69,4 @@ tile_set = SubResource("TileSet_7mycd")
 position_smoothing_enabled = true
 script = ExtResource("3_h2yge")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-
 [node name="Control" parent="." instance=ExtResource("4_1bvp3")]
