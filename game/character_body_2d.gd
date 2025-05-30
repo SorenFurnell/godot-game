@@ -41,7 +41,7 @@ func get_input():
 		stop_anims()
 	
 	for i in get_slide_collision_count():
-		if get_slide_collision(i).get_collider().name == "die tiles":
+		if get_slide_collision(i).get_collider().name == "die tiles" || get_slide_collision(i).get_collider().name == "spikes":
 			die = true
 			get_parent().get_node("Control").visible = true
 	
