@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://btxh3n6ifcpny"
+path="res://.godot/imported/core of the planet.ogg-12c15b8dcd36d8583f408dffb5bdab75.oggvorbisstr"
+
+[deps]
+
+source_file="res://core of the planet.ogg"
+dest_files=["res://.godot/imported/core of the planet.ogg-12c15b8dcd36d8583f408dffb5bdab75.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
