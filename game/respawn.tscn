@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxwktuy3bi33r"]
+
+[ext_resource type="Script" uid="uid://5q6rw3oi8qo" path="res://respawn.gd" id="1_dsqut"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v4y63"]
+font_size = 161
+
+[node name="respawn" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -641.0
+offset_top = -301.0
+offset_right = 639.0
+offset_bottom = 419.0
+script = ExtResource("1_dsqut")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -419.0
+offset_top = -230.0
+offset_right = 450.0
+offset_bottom = -9.0
+text = "you is die :("
+label_settings = SubResource("LabelSettings_v4y63")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = -221.0
+offset_top = 69.0
+offset_right = 210.0
+offset_bottom = 181.0
+text = "respawn"

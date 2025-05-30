@@ -7,6 +7,7 @@ var gravity = 1250
 var friction = 50
 var fliped = false
 var facingLeft = true
+var die = false
 @export var canJump = false
 @export var canFlip = true
 
@@ -38,6 +39,11 @@ func get_input():
 		canFlip = true
 	else:
 		stop_anims()
+	
+	for i in get_slide_collision_count():
+		if get_slide_collision(i).get_collider().name == "die tiles":
+			die = true
+			get_parent().get_node("Control").visible = true
 	
 	var right = Input.is_action_pressed('ui_right')
 	var left = Input.is_action_pressed('ui_left')
@@ -74,10 +80,13 @@ func get_input():
 		get_node("Sprite2D").position.x = 0
 
 func _physics_process(delta):
-	velocity.y += gravity * delta
-	get_input()
-	if fliped:
-		scale.y = -0.5
+	if die == false:
+		velocity.y += gravity * delta
+		get_input()
+		if fliped:
+			scale.y = -0.5
+		else:
+			scale.y = 0.5
+		move_and_slide()
 	else:
-		scale.y = 0.5
-	move_and_slide()
+		visible = false
