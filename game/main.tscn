@@ -76,3 +76,23 @@ script = ExtResource("3_h2yge")
 stream = ExtResource("8_5vw27")
 autoplay = true
 parameters/looping = true
+
+[node name="checkpoints" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="checkpoints"]
+position = Vector2(-500, 100)
+
+[node name="1" type="Node2D" parent="checkpoints"]
+position = Vector2(383, 491)
+
+[node name="2" type="Node2D" parent="checkpoints"]
+position = Vector2(566, 1357)
+
+[node name="3" type="Node2D" parent="checkpoints"]
+position = Vector2(515, 2324)
+
+[node name="4" type="Node2D" parent="checkpoints"]
+position = Vector2(515, 2324)
+
+[node name="5" type="Node2D" parent="checkpoints"]
+position = Vector2(519, 3478)
