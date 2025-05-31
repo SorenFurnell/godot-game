@@ -86,7 +86,7 @@ position = Vector2(-500, 100)
 position = Vector2(383, 491)
 
 [node name="2" type="Node2D" parent="checkpoints"]
-position = Vector2(566, 1357)
+position = Vector2(383, 419)
 
 [node name="3" type="Node2D" parent="checkpoints"]
 position = Vector2(515, 2324)

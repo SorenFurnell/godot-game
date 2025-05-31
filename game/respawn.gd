@@ -35,7 +35,10 @@ func _process(delta: float) -> void:
 					#chara.position = Vector2(458, 2300)
 #				3:
 					#chara.position = Vector2(458, 2300)
-#				2:
+				2:
+					get_parent().get_node("Camera2D").position.y -= 720
+					get_parent().get_node("Camera2D").room -= 1
+					chara.position = checkPointPath
 					#chara.position = Vector2(564, 1432)
 #				1:
 					#chara.position = Vector2(400, 500)
