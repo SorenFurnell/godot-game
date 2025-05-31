@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpc1pcw4egjxy"]
+[gd_scene load_steps=6 format=3 uid="uid://cpc1pcw4egjxy"]
 
 [ext_resource type="FontFile" uid="uid://c6swlmtcgyvvu" path="res://NovaMono-Regular.ttf" id="1_06t4h"]
 [ext_resource type="Script" uid="uid://bsveqs3336ice" path="res://main_menu.gd" id="1_7vrkn"]
@@ -10,6 +10,9 @@ font_size = 171
 [sub_resource type="LabelSettings" id="LabelSettings_fu7sn"]
 font = ExtResource("1_06t4h")
 font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_7vrkn"]
+font = ExtResource("1_06t4h")
 
 [node name="main menu" type="Node2D"]
 script = ExtResource("1_7vrkn")
@@ -36,3 +39,11 @@ z_index = -2
 offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(0, 0, 0, 1)
+
+[node name="Label3" type="Label" parent="."]
+offset_top = 670.0
+offset_right = 371.0
+offset_bottom = 719.0
+text = "Font:  Nova Mono by Wojciech Kalinowski
+https://fonts.google.com/specimen/Nova+Mono"
+label_settings = SubResource("LabelSettings_7vrkn")

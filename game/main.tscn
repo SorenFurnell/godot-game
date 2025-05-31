@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://ckp8vvnm8seho"]
+[gd_scene load_steps=16 format=4 uid="uid://ckp8vvnm8seho"]
 
 [ext_resource type="PackedScene" uid="uid://dgo2fgleqm6fr" path="res://chara.tscn" id="2_h2yge"]
 [ext_resource type="Texture2D" uid="uid://dja767e6m0g3g" path="res://icon.svg" id="3_1bvp3"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bju4sh2td825x" path="res://icon (Copy).png" id="3_lquwl"]
 [ext_resource type="PackedScene" uid="uid://cxwktuy3bi33r" path="res://respawn.tscn" id="4_1bvp3"]
 [ext_resource type="AudioStream" uid="uid://btxh3n6ifcpny" path="res://core of the planet.ogg" id="8_5vw27"]
+[ext_resource type="FontFile" uid="uid://c6swlmtcgyvvu" path="res://NovaMono-Regular.ttf" id="9_kek77"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_272bh"]
 resource_name = "floorTile"
@@ -47,6 +48,10 @@ sources/0 = SubResource("TileSetAtlasSource_272bh")
 sources/4 = SubResource("TileSetAtlasSource_kek77")
 sources/5 = SubResource("TileSetAtlasSource_4c57u")
 sources/2 = SubResource("TileSetAtlasSource_5vw27")
+
+[sub_resource type="LabelSettings" id="LabelSettings_4c57u"]
+font = ExtResource("9_kek77")
+font_size = 64
 
 [node name="main" type="Node2D"]
 
@@ -96,3 +101,11 @@ position = Vector2(515, 2324)
 
 [node name="5" type="Node2D" parent="checkpoints"]
 position = Vector2(519, 3478)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -304.0
+offset_top = 3408.0
+offset_right = 343.0
+offset_bottom = 3498.0
+text = "Congratulations :)"
+label_settings = SubResource("LabelSettings_4c57u")
