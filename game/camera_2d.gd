@@ -18,3 +18,5 @@ func _process(_delta: float) -> void:
 		room -= 1
 		#get_parent().get_node("chara").die = true
 		#get_parent().get_node("Control").visible = true
+	if get_parent().get_node("chara").position.x <= position.x-640:
+		position.x -= 640
