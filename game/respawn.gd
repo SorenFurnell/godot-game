@@ -31,6 +31,10 @@ func _process(delta: float) -> void:
 				4:
 					get_parent().get_node("Camera2D").position.y -= 720
 					get_parent().get_node("Camera2D").room -= 1
+					chara.velocity.y *= -1
+					chara.gravity *= -1
+					chara.jump_speed *= -1
+					chara.fliped = true
 					chara.position = checkPointPath
 					#chara.position = Vector2(458, 2300)
 #				3:
